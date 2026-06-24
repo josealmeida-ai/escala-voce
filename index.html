@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escala Você — Programa de Desenvolvimento para Empreendedores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-bg { background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 55%, #0f2d4a 100%); }
+        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .btn-cta { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(59,130,246,0.45); }
+        .btn-ghost { transition: background 0.2s ease, transform 0.2s ease; }
+        .btn-ghost:hover { transform: translateY(-2px); }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+<!-- ═══════════════════════════════════════════════
+     HEADER / NAV
+════════════════════════════════════════════════ -->
+<header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm transition-shadow duration-300">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-blue-700 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-chart-line text-white text-sm"></i>
+                </div>
+                <span class="text-xl font-bold text-gray-900">Escala <span class="text-blue-700">Você</span></span>
+            </a>
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
+                <a href="#identifica" class="hover:text-blue-700 transition-colors">Você se identifica?</a>
+                <a href="#jornada"    class="hover:text-blue-700 transition-colors">Jornada</a>
+                <a href="#diferenciais" class="hover:text-blue-700 transition-colors">Diferenciais</a>
+                <a href="#facilitadores" class="hover:text-blue-700 transition-colors">Facilitadores</a>
+                <a href="#agendar" class="btn-cta bg-blue-700 text-white px-4 py-2 rounded-lg hover:bg-blue-800 transition-colors">
+                    Agendar conversa
+                </a>
+            </nav>
+            <!-- Mobile toggle -->
+            <button id="menuBtn" class="md:hidden text-gray-600 p-2 rounded-lg hover:bg-gray-100 transition-colors" aria-label="Abrir menu">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-4">
+        <nav class="flex flex-col gap-1 text-sm font-medium text-gray-700">
+            <a href="#identifica"    class="py-2 px-3 rounded-lg hover:bg-gray-50 hover:text-blue-700 transition-colors">Você se identifica?</a>
+            <a href="#jornada"       class="py-2 px-3 rounded-lg hover:bg-gray-50 hover:text-blue-700 transition-colors">Jornada</a>
+            <a href="#diferenciais"  class="py-2 px-3 rounded-lg hover:bg-gray-50 hover:text-blue-700 transition-colors">Diferenciais</a>
+            <a href="#facilitadores" class="py-2 px-3 rounded-lg hover:bg-gray-50 hover:text-blue-700 transition-colors">Facilitadores</a>
+            <a href="#agendar" class="mt-2 bg-blue-700 text-white px-4 py-3 rounded-lg text-center hover:bg-blue-800 transition-colors">
+                Agendar conversa
+            </a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 1 — HERO
+════════════════════════════════════════════════ -->
+<section class="hero-bg pt-28 pb-24 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center">
+    <div class="max-w-4xl mx-auto text-center">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 bg-blue-900/40 border border-blue-500/30 rounded-full px-4 py-2 text-blue-300 text-sm font-medium mb-8">
+            <i class="fas fa-rocket text-xs"></i>
+            <span>Programa de Desenvolvimento para Empreendedores</span>
+        </div>
+        <!-- Headline -->
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+            O negócio está crescendo, e você sente que precisa
+            <span class="text-blue-400"> crescer junto?</span>
+        </h1>
+        <!-- Subheadline -->
+        <p class="text-lg sm:text-xl text-blue-100/80 max-w-2xl mx-auto mb-10 leading-relaxed">
+            Em 8 semanas, desenvolva clareza, foco e capacidades de liderança com o programa Escala Você.
+            Conduza a próxima fase do seu negócio sem perder o que é importante para você.
+        </p>
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#identifica"
+               class="btn-cta bg-blue-500 hover:bg-blue-400 text-white font-semibold px-8 py-4 rounded-xl text-lg shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2">
+                👉 Quero saber mais
+            </a>
+            <a href="#agendar"
+               class="btn-ghost bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold px-8 py-4 rounded-xl text-lg backdrop-blur-sm flex items-center justify-center gap-2">
+                👉 Agendar conversa
+            </a>
+        </div>
+        <!-- Stats strip -->
+        <div class="mt-16 grid grid-cols-3 gap-8 max-w-xs sm:max-w-sm mx-auto">
+            <div class="text-center">
+                <div class="text-3xl font-extrabold text-white">8</div>
+                <div class="text-blue-300 text-xs mt-1 font-medium uppercase tracking-wide">Semanas</div>
+            </div>
+            <div class="text-center border-x border-white/10">
+                <div class="text-3xl font-extrabold text-white">7</div>
+                <div class="text-blue-300 text-xs mt-1 font-medium uppercase tracking-wide">Encontros</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl font-extrabold text-white">4</div>
+                <div class="text-blue-300 text-xs mt-1 font-medium uppercase tracking-wide">Módulos</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 2 — VOCÊ SE IDENTIFICA?
+════════════════════════════════════════════════ -->
+<section id="identifica" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">Você já se pegou pensando:</h2>
+            <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
+        </div>
+
+        <!-- Pain-point cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+            <div class="card-hover bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex items-start gap-3">
+                <div class="w-8 h-8 bg-red-50 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fas fa-question text-red-400 text-sm"></i>
+                </div>
+                <p class="text-gray-700 text-sm font-medium leading-relaxed">"Não sei se estou no caminho certo."</p>
+            </div>
+            <div class="card-hover bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex items-start gap-3">
+                <div class="w-8 h-8 bg-orange-50 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fas fa-brain text-orange-400 text-sm"></i>
+                </div>
+                <p class="text-gray-700 text-sm font-medium leading-relaxed">"Tenho muitas ideias e não consigo decidir qual seguir."</p>
+            </div>
+            <div class="card-hover bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex items-start gap-3">
+                <div class="w-8 h-8 bg-yellow-50 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fas fa-clock text-yellow-500 text-sm"></i>
+                </div>
+                <p class="text-gray-700 text-sm font-medium leading-relaxed">"Trabalho o dia inteiro e parece que não produzi nada."</p>
+            </div>
+            <div class="card-hover bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex items-start gap-3">
+                <div class="w-8 h-8 bg-red-50 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fas fa-link text-red-400 text-sm"></i>
+                </div>
+                <p class="text-gray-700 text-sm font-medium leading-relaxed">"Meu negócio depende demais de mim."</p>
+            </div>
+            <div class="card-hover bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex items-start gap-3">
+                <div class="w-8 h-8 bg-orange-50 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fas fa-hands text-orange-400 text-sm"></i>
+                </div>
+                <p class="text-gray-700 text-sm font-medium leading-relaxed">"Tenho dificuldade para delegar."</p>
+            </div>
+            <div class="card-hover bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex items-start gap-3">
+                <div class="w-8 h-8 bg-yellow-50 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fas fa-signs-post text-yellow-500 text-sm"></i>
+                </div>
+                <p class="text-gray-700 text-sm font-medium leading-relaxed">"Não sei exatamente qual deve ser meu próximo passo."</p>
+            </div>
+            <div class="card-hover bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex items-start gap-3">
+                <div class="w-8 h-8 bg-red-50 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fas fa-battery-empty text-red-400 text-sm"></i>
+                </div>
+                <p class="text-gray-700 text-sm font-medium leading-relaxed">"O negócio está consumindo minha vida."</p>
+            </div>
+            <div class="card-hover bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex items-start gap-3">
+                <div class="w-8 h-8 bg-orange-50 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fas fa-person-running text-orange-400 text-sm"></i>
+                </div>
+                <p class="text-gray-700 text-sm font-medium leading-relaxed">"Sei o que preciso fazer, mas não consigo manter a disciplina para executar."</p>
+            </div>
+        </div>
+
+        <!-- Insight callout -->
+        <div class="bg-blue-700 rounded-2xl p-8 text-center shadow-xl">
+            <i class="fas fa-lightbulb text-yellow-300 text-3xl mb-4"></i>
+            <p class="text-white text-lg sm:text-xl font-medium leading-relaxed max-w-3xl mx-auto">
+                Se você respondeu <strong class="text-yellow-300">"sim"</strong> para algumas dessas perguntas,
+                provavelmente o desafio não está apenas na empresa. Está na forma como você está
+                <strong class="text-yellow-300">liderando essa fase do negócio.</strong>
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 3 — NOSSA TESE
+════════════════════════════════════════════════ -->
+<section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-10">
+            <span class="text-blue-600 text-sm font-semibold uppercase tracking-widest">Fundamento</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mt-2 mb-3">Nossa tese</h2>
+            <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full mb-8"></div>
+            <p class="text-2xl sm:text-3xl font-bold text-gray-900 leading-tight">
+                "O negócio é reflexo de quem o empreendedor é."
+            </p>
+        </div>
+
+        <!-- Growth pillars -->
+        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 mb-10">
+            <p class="text-gray-700 font-semibold text-center text-lg mb-6">Quando o empreendedor cresce:</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                <div class="card-hover bg-white rounded-xl p-4 text-center shadow-sm">
+                    <i class="fas fa-chess text-blue-600 text-2xl mb-3"></i>
+                    <p class="text-gray-700 text-sm font-medium">Toma decisões melhores</p>
+                </div>
+                <div class="card-hover bg-white rounded-xl p-4 text-center shadow-sm">
+                    <i class="fas fa-eye text-indigo-600 text-2xl mb-3"></i>
+                    <p class="text-gray-700 text-sm font-medium">Ganha clareza</p>
+                </div>
+                <div class="card-hover bg-white rounded-xl p-4 text-center shadow-sm">
+                    <i class="fas fa-users text-blue-600 text-2xl mb-3"></i>
+                    <p class="text-gray-700 text-sm font-medium">Desenvolve liderança</p>
+                </div>
+                <div class="card-hover bg-white rounded-xl p-4 text-center shadow-sm">
+                    <i class="fas fa-people-group text-indigo-600 text-2xl mb-3"></i>
+                    <p class="text-gray-700 text-sm font-medium">Cria equipes mais fortes</p>
+                </div>
+                <div class="card-hover bg-white rounded-xl p-4 text-center shadow-sm col-span-2 sm:col-span-1">
+                    <i class="fas fa-seedling text-blue-600 text-2xl mb-3"></i>
+                    <p class="text-gray-700 text-sm font-medium">Constrói negócios sustentáveis</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <p class="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">
+                Por isso nosso foco no <strong class="text-blue-700">Escala Você</strong> não é apenas a empresa.
+                Nosso foco é desenvolver <strong class="text-gray-900">a pessoa que está construindo a empresa.</strong>
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 4 — A TRANSFORMAÇÃO
+════════════════════════════════════════════════ -->
+<section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+            <span class="text-blue-600 text-sm font-semibold uppercase tracking-widest">Resultados</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mt-2 mb-3">A transformação</h2>
+            <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- ANTES -->
+            <div class="bg-white rounded-2xl p-8 border-2 border-red-100 shadow-sm">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-times text-red-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-red-600">Antes</h3>
+                </div>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-circle-xmark text-red-400 mt-0.5 shrink-0"></i>
+                        <span class="text-gray-700">Excesso de trabalho e sobrecarga constante</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-circle-xmark text-red-400 mt-0.5 shrink-0"></i>
+                        <span class="text-gray-700">Dúvidas que não deixam o negócio avançar</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-circle-xmark text-red-400 mt-0.5 shrink-0"></i>
+                        <span class="text-gray-700">Sensação de sobrecarga e esgotamento</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-circle-xmark text-red-400 mt-0.5 shrink-0"></i>
+                        <span class="text-gray-700">Falta de foco e dispersão de energia</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-circle-xmark text-red-400 mt-0.5 shrink-0"></i>
+                        <span class="text-gray-700">Dificuldade para liderar e inspirar a equipe</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-circle-xmark text-red-400 mt-0.5 shrink-0"></i>
+                        <span class="text-gray-700">Prioridades confusas e urgências constantes</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- DEPOIS -->
+            <div class="bg-white rounded-2xl p-8 border-2 border-green-100 shadow-sm">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-check text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-green-600">Depois</h3>
+                </div>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-circle-check text-green-500 mt-0.5 shrink-0"></i>
+                        <span class="text-gray-700">Clareza sobre a direção do negócio</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-circle-check text-green-500 mt-0.5 shrink-0"></i>
+                        <span class="text-gray-700">Foco no que realmente importa para crescer</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-circle-check text-green-500 mt-0.5 shrink-0"></i>
+                        <span class="text-gray-700">Plano de crescimento concreto e viável</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-circle-check text-green-500 mt-0.5 shrink-0"></i>
+                        <span class="text-gray-700">Liderança mais consciente e eficaz</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-circle-check text-green-500 mt-0.5 shrink-0"></i>
+                        <span class="text-gray-700">Capacidade real de delegar e confiar</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-circle-check text-green-500 mt-0.5 shrink-0"></i>
+                        <span class="text-gray-700">Empresa alinhada aos seus objetivos de vida</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 5 — A JORNADA (Timeline)
+════════════════════════════════════════════════ -->
+<section id="jornada" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-14">
+            <span class="text-blue-600 text-sm font-semibold uppercase tracking-widest">Programa</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mt-2 mb-3">A Jornada Escala Você</h2>
+            <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="relative">
+            <!-- Vertical line -->
+            <div class="absolute left-6 top-6 bottom-6 w-0.5 bg-gradient-to-b from-blue-600 via-indigo-500 to-violet-600 hidden sm:block"></div>
+
+            <div class="space-y-8">
+                <!-- Module 1 -->
+                <div class="flex gap-6 items-start">
+                    <div class="shrink-0 w-12 h-12 bg-blue-700 rounded-xl flex items-center justify-center shadow-lg z-10">
+                        <span class="text-white font-bold text-lg">1</span>
+                    </div>
+                    <div class="card-hover flex-1 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100">
+                        <span class="text-blue-600 text-xs font-bold uppercase tracking-wider">Módulo 1</span>
+                        <h3 class="font-bold text-gray-900 text-lg mt-1 mb-2">Quem sou como empreendedor?</h3>
+                        <p class="text-gray-600 leading-relaxed text-sm">Que tipo de negócio eu quero construir para sustentar a vida que eu quero viver?</p>
+                    </div>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="flex gap-6 items-start">
+                    <div class="shrink-0 w-12 h-12 bg-indigo-700 rounded-xl flex items-center justify-center shadow-lg z-10">
+                        <span class="text-white font-bold text-lg">2</span>
+                    </div>
+                    <div class="card-hover flex-1 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-6 border border-indigo-100">
+                        <span class="text-indigo-600 text-xs font-bold uppercase tracking-wider">Módulo 2</span>
+                        <h3 class="font-bold text-gray-900 text-lg mt-1 mb-2">Minha estratégia como empreendedor</h3>
+                        <p class="text-gray-600 leading-relaxed text-sm">Como transformo essa visão em prioridades e metas concretas?</p>
+                    </div>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="flex gap-6 items-start">
+                    <div class="shrink-0 w-12 h-12 bg-violet-700 rounded-xl flex items-center justify-center shadow-lg z-10">
+                        <span class="text-white font-bold text-lg">3</span>
+                    </div>
+                    <div class="card-hover flex-1 bg-gradient-to-br from-violet-50 to-pink-50 rounded-2xl p-6 border border-violet-100">
+                        <span class="text-violet-600 text-xs font-bold uppercase tracking-wider">Módulo 3</span>
+                        <h3 class="font-bold text-gray-900 text-lg mt-1 mb-2">Eu como ferramenta de crescimento</h3>
+                        <p class="text-gray-600 leading-relaxed text-sm">Quais capacidades preciso desenvolver para liderar a próxima fase do meu negócio?</p>
+                    </div>
+                </div>
+
+                <!-- Module 4 -->
+                <div class="flex gap-6 items-start">
+                    <div class="shrink-0 w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center shadow-lg z-10">
+                        <span class="text-white font-bold text-lg">4</span>
+                    </div>
+                    <div class="card-hover flex-1 bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-6 border border-slate-100">
+                        <span class="text-slate-600 text-xs font-bold uppercase tracking-wider">Módulo 4</span>
+                        <h3 class="font-bold text-gray-900 text-lg mt-1 mb-2">Estratégia da empresa</h3>
+                        <p class="text-gray-600 leading-relaxed text-sm">Como transformar minha empresa em uma máquina capaz de realizar essa visão?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 6 — ENTREGÁVEIS
+════════════════════════════════════════════════ -->
+<section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+            <span class="text-blue-600 text-sm font-semibold uppercase tracking-widest">Incluído no programa</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mt-2 mb-3">Entregáveis do Programa Escala Você</h2>
+            <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Deliverable items -->
+            <div class="card-hover bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex items-center gap-4">
+                <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center shrink-0">
+                    <i class="fas fa-check text-blue-600 text-sm"></i>
+                </div>
+                <span class="text-gray-700 font-medium">Diagnóstico inicial</span>
+            </div>
+            <div class="card-hover bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex items-center gap-4">
+                <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center shrink-0">
+                    <i class="fas fa-check text-blue-600 text-sm"></i>
+                </div>
+                <span class="text-gray-700 font-medium">Mapa de talentos e fortalezas</span>
+            </div>
+            <div class="card-hover bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex items-center gap-4">
+                <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center shrink-0">
+                    <i class="fas fa-check text-blue-600 text-sm"></i>
+                </div>
+                <span class="text-gray-700 font-medium">Relatório de valores</span>
+            </div>
+            <div class="card-hover bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex items-center gap-4">
+                <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center shrink-0">
+                    <i class="fas fa-check text-blue-600 text-sm"></i>
+                </div>
+                <span class="text-gray-700 font-medium">Proposta de valor profissional</span>
+            </div>
+            <div class="card-hover bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex items-center gap-4">
+                <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center shrink-0">
+                    <i class="fas fa-check text-blue-600 text-sm"></i>
+                </div>
+                <span class="text-gray-700 font-medium">Blueprint Vida + Negócio</span>
+            </div>
+            <div class="card-hover bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex items-center gap-4">
+                <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center shrink-0">
+                    <i class="fas fa-check text-blue-600 text-sm"></i>
+                </div>
+                <span class="text-gray-700 font-medium">Diagnóstico de viabilidade</span>
+            </div>
+            <div class="card-hover bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex items-center gap-4">
+                <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center shrink-0">
+                    <i class="fas fa-check text-blue-600 text-sm"></i>
+                </div>
+                <span class="text-gray-700 font-medium">Plano de Prioridades</span>
+            </div>
+            <div class="card-hover bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex items-center gap-4">
+                <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center shrink-0">
+                    <i class="fas fa-check text-blue-600 text-sm"></i>
+                </div>
+                <span class="text-gray-700 font-medium">Plano de Desenvolvimento do Empreendedor</span>
+            </div>
+            <div class="card-hover bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex items-center gap-4">
+                <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center shrink-0">
+                    <i class="fas fa-check text-blue-600 text-sm"></i>
+                </div>
+                <span class="text-gray-700 font-medium">Plano Estratégico de 90 dias</span>
+            </div>
+            <div class="card-hover bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex items-center gap-4">
+                <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center shrink-0">
+                    <i class="fas fa-check text-blue-600 text-sm"></i>
+                </div>
+                <span class="text-gray-700 font-medium">OKRs pessoais e empresariais</span>
+            </div>
+            <div class="card-hover bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex items-center gap-4 sm:col-span-2 lg:col-span-1">
+                <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center shrink-0">
+                    <i class="fas fa-check text-blue-600 text-sm"></i>
+                </div>
+                <span class="text-gray-700 font-medium">Materiais de apoio</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 7 — DIFERENCIAIS
+════════════════════════════════════════════════ -->
+<section id="diferenciais" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+            <span class="text-blue-600 text-sm font-semibold uppercase tracking-widest">Por que escolher</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mt-2 mb-3">O que torna o Escala Você diferente?</h2>
+            <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
+        </div>
+
+        <!-- Highlight block -->
+        <div class="bg-gradient-to-br from-blue-700 to-indigo-800 rounded-2xl p-8 sm:p-10 text-white mb-10 shadow-xl">
+            <i class="fas fa-star text-yellow-300 text-3xl mb-4"></i>
+            <p class="text-lg sm:text-xl leading-relaxed font-light max-w-2xl">
+                Não trabalhamos apenas o negócio. Trabalhamos
+                <strong class="text-yellow-300 font-bold"> a pessoa que lidera o negócio.</strong>
+                Focamos em seu bem-estar e a sua forma única de fazer a diferença.
+            </p>
+        </div>
+
+        <!-- Metodologias badges -->
+        <div class="mb-10">
+            <p class="text-center text-gray-500 text-sm font-semibold uppercase tracking-widest mb-6">Metodologias reconhecidas</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="card-hover bg-gray-50 rounded-xl p-5 text-center border border-gray-200">
+                    <div class="w-10 h-10 bg-orange-100 rounded-lg mx-auto mb-3 flex items-center justify-center">
+                        <i class="fas fa-medal text-orange-500"></i>
+                    </div>
+                    <p class="font-bold text-gray-800 text-sm">Gallup</p>
+                    <p class="text-gray-500 text-xs mt-0.5">CliftonStrengths</p>
+                </div>
+                <div class="card-hover bg-gray-50 rounded-xl p-5 text-center border border-gray-200">
+                    <div class="w-10 h-10 bg-purple-100 rounded-lg mx-auto mb-3 flex items-center justify-center">
+                        <i class="fas fa-heart text-purple-500"></i>
+                    </div>
+                    <p class="font-bold text-gray-800 text-sm">Barrett</p>
+                    <p class="text-gray-500 text-xs mt-0.5">Values</p>
+                </div>
+                <div class="card-hover bg-gray-50 rounded-xl p-5 text-center border border-gray-200">
+                    <div class="w-10 h-10 bg-blue-100 rounded-lg mx-auto mb-3 flex items-center justify-center">
+                        <i class="fas fa-bullseye text-blue-600"></i>
+                    </div>
+                    <p class="font-bold text-gray-800 text-sm">OKRs</p>
+                    <p class="text-gray-500 text-xs mt-0.5">Objectives & Key Results</p>
+                </div>
+                <div class="card-hover bg-gray-50 rounded-xl p-5 text-center border border-gray-200">
+                    <div class="w-10 h-10 bg-green-100 rounded-lg mx-auto mb-3 flex items-center justify-center">
+                        <i class="fas fa-brain text-green-600"></i>
+                    </div>
+                    <p class="font-bold text-gray-800 text-sm">Positive</p>
+                    <p class="text-gray-500 text-xs mt-0.5">Intelligence</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experiência + Dupla -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="card-hover bg-blue-50 rounded-xl p-6 border border-blue-100">
+                <i class="fas fa-award text-blue-600 text-2xl mb-3"></i>
+                <h4 class="font-bold text-gray-900 mb-2">Experiência prática</h4>
+                <p class="text-gray-600 leading-relaxed">
+                    Mais de <strong class="text-blue-700">15 anos</strong> atuando com desenvolvimento humano,
+                    liderança, carreira e estratégia organizacional.
+                </p>
+            </div>
+            <div class="card-hover bg-indigo-50 rounded-xl p-6 border border-indigo-100">
+                <i class="fas fa-handshake text-indigo-600 text-2xl mb-3"></i>
+                <h4 class="font-bold text-gray-900 mb-2">Dupla complementar</h4>
+                <p class="text-gray-600 leading-relaxed">
+                    Uma combinação entre <strong class="text-indigo-700">desenvolvimento humano, liderança,
+                    productivity, estratégia empresarial</strong> e crescimento de negócios.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 8 — PARA QUEM É
+════════════════════════════════════════════════ -->
+<section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+            <span class="text-blue-600 text-sm font-semibold uppercase tracking-widest">Público ideal</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mt-2 mb-3">O Escala Você é para mim?</h2>
+            <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Para você se -->
+            <div class="bg-white rounded-2xl p-8 border-2 border-green-100 shadow-sm">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-check text-green-600 text-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-green-700">Para você se...</h3>
+                </div>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-circle-check text-green-500 mt-0.5 shrink-0"></i>
+                        <span class="text-gray-700">Tem um negócio em funcionamento</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-circle-check text-green-500 mt-0.5 shrink-0"></i>
+                        <span class="text-gray-700">Está validando uma ideia com potencial real</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-circle-check text-green-500 mt-0.5 shrink-0"></i>
+                        <span class="text-gray-700">Está formando ou começando a liderar uma equipe</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-circle-check text-green-500 mt-0.5 shrink-0"></i>
+                        <span class="text-gray-700">Sente que precisa crescer para que a empresa cresça</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-circle-check text-green-500 mt-0.5 shrink-0"></i>
+                        <span class="text-gray-700">Quer construir um negócio alinhado aos seus valores</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Não é para você se -->
+            <div class="bg-white rounded-2xl p-8 border-2 border-red-100 shadow-sm">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-times text-red-500 text-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-red-600">Não é para você se...</h3>
+                </div>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-circle-xmark text-red-400 mt-0.5 shrink-0"></i>
+                        <span class="text-gray-700">Procura fórmulas mágicas de sucesso</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-circle-xmark text-red-400 mt-0.5 shrink-0"></i>
+                        <span class="text-gray-700">Não pretende dedicar tempo para implementação</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-circle-xmark text-red-400 mt-0.5 shrink-0"></i>
+                        <span class="text-gray-700">Busca apenas uma consultoria operacional</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 9 — COMO FUNCIONA
+════════════════════════════════════════════════ -->
+<section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+            <span class="text-blue-600 text-sm font-semibold uppercase tracking-widest">Formato</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mt-2 mb-3">Como funciona</h2>
+            <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="card-hover bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100 text-center">
+                <div class="w-12 h-12 bg-blue-700 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md">
+                    <i class="fas fa-calendar-alt text-white"></i>
+                </div>
+                <h4 class="font-bold text-gray-900 mb-2">Duração</h4>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    8 semanas <span class="text-blue-600 font-medium">(Módulos 1 e 2)</span>
+                </p>
+            </div>
+            <div class="card-hover bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100 text-center">
+                <div class="w-12 h-12 bg-blue-700 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md">
+                    <i class="fas fa-video text-white"></i>
+                </div>
+                <h4 class="font-bold text-gray-900 mb-2">Encontros</h4>
+                <p class="text-gray-600 text-sm leading-relaxed">7 encontros individuais online — 1,5h cada</p>
+            </div>
+            <div class="card-hover bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100 text-center">
+                <div class="w-12 h-12 bg-blue-700 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md">
+                    <i class="fas fa-pencil text-white"></i>
+                </div>
+                <h4 class="font-bold text-gray-900 mb-2">Exercícios práticos</h4>
+                <p class="text-gray-600 text-sm leading-relaxed">Atividades entre os encontros para aplicação imediata</p>
+            </div>
+            <div class="card-hover bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100 text-center">
+                <div class="w-12 h-12 bg-blue-700 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md">
+                    <i class="fas fa-comments text-white"></i>
+                </div>
+                <h4 class="font-bold text-gray-900 mb-2">Acompanhamento</h4>
+                <p class="text-gray-600 text-sm leading-relaxed">Suporte contínuo durante todo o processo</p>
+            </div>
+            <div class="card-hover bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100 text-center sm:col-span-2 lg:col-span-1">
+                <div class="w-12 h-12 bg-blue-700 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md">
+                    <i class="fas fa-map-location-dot text-white"></i>
+                </div>
+                <h4 class="font-bold text-gray-900 mb-2">Plano final</h4>
+                <p class="text-gray-600 text-sm leading-relaxed">Plano de implementação pronto para execução</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 10 — FACILITADORES
+════════════════════════════════════════════════ -->
+<section id="facilitadores" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+            <span class="text-blue-600 text-sm font-semibold uppercase tracking-widest">Time</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mt-2 mb-3">Quem guiará você nesta jornada</h2>
+            <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Marina -->
+            <div class="card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+                <div class="flex flex-col items-center text-center mb-6">
+                    <div class="w-24 h-24 bg-gradient-to-br from-blue-100 to-indigo-200 rounded-full flex items-center justify-center mb-4 shadow-md">
+                        <i class="fas fa-user text-blue-400 text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900">Marina</h3>
+                    <p class="text-blue-600 text-sm font-semibold mt-1">Facilitadora</p>
+                </div>
+                <ul class="space-y-3 text-sm text-gray-600">
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-blue-500 mt-0.5 shrink-0"></i>
+                        <span>Especialista em desenvolvimento humano e liderança</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-blue-500 mt-0.5 shrink-0"></i>
+                        <span>Certificada em Gallup CliftonStrengths e Barrett Values</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-blue-500 mt-0.5 shrink-0"></i>
+                        <span>Experiência com programas de desenvolvimento de liderança</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-blue-500 mt-0.5 shrink-0"></i>
+                        <span>Foco em bem-estar e performance sustentável</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- José -->
+            <div class="card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+                <div class="flex flex-col items-center text-center mb-6">
+                    <div class="w-24 h-24 bg-gradient-to-br from-indigo-100 to-blue-200 rounded-full flex items-center justify-center mb-4 shadow-md">
+                        <i class="fas fa-user text-indigo-400 text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900">José</h3>
+                    <p class="text-indigo-600 text-sm font-semibold mt-1">Facilitador</p>
+                </div>
+                <ul class="space-y-3 text-sm text-gray-600">
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-indigo-500 mt-0.5 shrink-0"></i>
+                        <span>Especialista em estratégia e crescimento de negócios</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-indigo-500 mt-0.5 shrink-0"></i>
+                        <span>Experiência com OKRs e Positive Intelligence</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-indigo-500 mt-0.5 shrink-0"></i>
+                        <span>Foco em productivity e execução estratégica</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-indigo-500 mt-0.5 shrink-0"></i>
+                        <span>Apoio na construção de planos de ação concretos</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 11 — CTA FINAL
+════════════════════════════════════════════════ -->
+<section id="agendar" class="hero-bg py-24 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center">
+        <div class="w-16 h-16 bg-blue-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-blue-400/30">
+            <i class="fas fa-handshake text-blue-300 text-2xl"></i>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6 leading-tight">
+            Você não precisa descobrir tudo sozinho.
+        </h2>
+        <p class="text-lg text-blue-100/80 leading-relaxed mb-10 max-w-2xl mx-auto">
+            O empreendedorismo pode ser uma jornada solitária. Mas não precisa ser.
+            Agende uma conversa e descubra se o <strong class="text-white">Escala Você</strong>
+            faz sentido para o momento atual do seu negócio.
+        </p>
+        <a href="#"
+           class="btn-cta inline-flex items-center justify-center gap-3 bg-blue-500 hover:bg-blue-400 text-white font-bold px-10 py-5 rounded-2xl text-xl shadow-2xl shadow-blue-500/30">
+            👉 Agendar conversa
+        </a>
+        <p class="text-blue-300/60 text-sm mt-6">
+            Sem compromisso. Uma conversa de 30 minutos para entender seu momento.
+        </p>
+    </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════ -->
+<footer class="bg-gray-950 py-10 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-2">
+            <div class="w-7 h-7 bg-blue-700 rounded-lg flex items-center justify-center">
+                <i class="fas fa-chart-line text-white text-xs"></i>
+            </div>
+            <span class="text-lg font-bold text-white">Escala <span class="text-blue-400">Você</span></span>
+        </div>
+        <p class="text-gray-500 text-sm">© 2025 Escala Você. Todos os direitos reservados.</p>
+        <div class="flex items-center gap-4">
+            <a href="#" class="text-gray-500 hover:text-blue-400 transition-colors text-sm">Privacidade</a>
+            <a href="#" class="text-gray-500 hover:text-blue-400 transition-colors text-sm">Contato</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // Smooth scroll for all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                const offset = 72; // header height
+                const top = target.getBoundingClientRect().top + window.scrollY - offset;
+                window.scrollTo({ top, behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Header shadow on scroll
+    window.addEventListener('scroll', () => {
+        document.getElementById('header').classList.toggle('shadow-md', window.scrollY > 10);
+    });
+</script>
+</body>
+</html>
