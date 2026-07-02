@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "pdf": "node scripts/generate-pdf.js",
-    "pptx": "node scripts/generate-pptx.js"
+    "pptx": "node scripts/generate-pptx.js",
+    "deploy": "node scripts/deploy.js"
   },
   "devDependencies": {
     "puppeteer-core": "^25.3.0",
