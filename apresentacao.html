@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Escala Você — Apresentação</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; font-family:'Inter', sans-serif; background:#525659; }
+  .slide-outer { display:flex; justify-content:center; overflow:hidden; }
+  .slide {
+    width:1920px; height:1080px; flex-shrink:0;
+    position:relative; overflow:hidden; background:#ffffff;
+    transform-origin: top center;
+  }
+  .hero-bg { background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 55%, #0f2d4a 100%); }
+  .eyebrow { font-size:22px; font-weight:700; text-transform:uppercase; letter-spacing:.18em; }
+  .divider { height:6px; border-radius:9999px; }
+  .blob { position:absolute; border-radius:9999px; }
+  .logo-mark { width:44px; height:44px; border-radius:12px; background:#1d4ed8; display:flex; align-items:center; justify-content:center; }
+  .logo-mark i { color:#fff; font-size:18px; }
+  .page-footer { position:absolute; bottom:36px; right:56px; display:flex; align-items:center; gap:10px; opacity:.55; font-size:16px; }
+  .toolbar {
+    position:fixed; top:16px; right:16px; z-index:50;
+    background:#111827; color:#fff; padding:10px 16px; border-radius:12px;
+    font-size:14px; display:flex; align-items:center; gap:12px; box-shadow:0 10px 25px rgba(0,0,0,.35);
+  }
+  .toolbar button { background:#2563eb; color:#fff; border:none; padding:8px 14px; border-radius:8px; font-weight:600; cursor:pointer; }
+  .toolbar button:hover { background:#1d4ed8; }
+  @media print {
+    @page { size: 1920px 1080px; margin: 0; }
+    html, body { background:#fff; }
+    .toolbar { display:none !important; }
+    .slide-outer { transform:none !important; height:1080px !important; }
+    .slide { transform:none !important; box-shadow:none !important; page-break-after: always; }
+  }
+  @media screen {
+    .slide { box-shadow:0 20px 50px rgba(0,0,0,.35); margin-bottom:32px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  <span><i class="fas fa-circle-info"></i> Ctrl+P → Salvar como PDF (tamanho personalizado 1920×1080px)</span>
+  <button onclick="window.print()">Baixar PDF</button>
+</div>
+
+<!-- ============================================================
+     SLIDE 1 — CAPA
+============================================================= -->
+<div class="slide-outer"><section class="slide hero-bg">
+  <div class="blob" style="width:700px;height:700px;background:radial-gradient(circle,rgba(59,130,246,.35),transparent 70%);top:-220px;right:-180px;"></div>
+  <div class="blob" style="width:600px;height:600px;background:radial-gradient(circle,rgba(99,102,241,.25),transparent 70%);bottom:-260px;left:-160px;"></div>
+
+  <div class="relative h-full flex flex-col justify-between px-[120px] py-[90px]">
+    <div class="flex items-center gap-3">
+      <div class="logo-mark" style="width:56px;height:56px;border-radius:16px;"><i class="fas fa-chart-line" style="font-size:22px;"></i></div>
+      <span class="text-white font-bold text-[28px]">Escala <span class="text-blue-400">Você</span></span>
+    </div>
+
+    <div>
+      <div class="inline-flex items-center gap-2 bg-blue-900/40 border border-blue-500/30 rounded-full px-6 py-3 text-blue-300 eyebrow mb-10" style="font-size:20px;">
+        <i class="fas fa-rocket"></i> Programa de Desenvolvimento para Empreendedores
+      </div>
+      <h1 class="text-white font-extrabold leading-[1.08]" style="font-size:96px; max-width:1500px;">
+        O negócio está crescendo, e você sente que precisa <span class="text-blue-400">crescer junto?</span>
+      </h1>
+      <p class="text-blue-100/80 mt-10" style="font-size:32px; max-width:1200px; line-height:1.5;">
+        Em 8 semanas, desenvolva clareza, foco e capacidades de liderança para conduzir a próxima fase
+        do seu negócio — sem perder o que é importante para você.
+      </p>
+    </div>
+
+    <div class="flex gap-16">
+      <div><div class="text-white font-extrabold" style="font-size:48px;">8</div><div class="text-blue-300 eyebrow" style="font-size:16px;">Semanas</div></div>
+      <div class="border-l border-white/20 pl-16"><div class="text-white font-extrabold" style="font-size:48px;">7</div><div class="text-blue-300 eyebrow" style="font-size:16px;">Encontros</div></div>
+      <div class="border-l border-white/20 pl-16"><div class="text-white font-extrabold" style="font-size:48px;">2</div><div class="text-blue-300 eyebrow" style="font-size:16px;">Módulos</div></div>
+    </div>
+  </div>
+</section></div>
+
+<!-- ============================================================
+     SLIDE 2 — SOBRE O ESCALA VOCÊ
+============================================================= -->
+<div class="slide-outer"><section class="slide">
+  <div class="blob" style="width:520px;height:520px;background:#eff6ff;top:-160px;right:-160px;"></div>
+  <div class="blob" style="width:420px;height:420px;background:#eef2ff;bottom:-180px;left:-140px;"></div>
+
+  <div class="relative h-full flex flex-col justify-center px-[120px] py-[90px]">
+    <span class="eyebrow text-blue-600">Fundamento</span>
+    <h2 class="font-extrabold text-slate-900 mt-3 mb-6" style="font-size:64px;">Sobre o Escala Você</h2>
+    <div class="divider bg-blue-600" style="width:96px;"></div>
+
+    <p class="text-slate-900 font-bold mt-12" style="font-size:40px; max-width:1300px;">
+      "O negócio é reflexo de quem o empreendedor é."
+    </p>
+
+    <p class="text-slate-600 mt-8 leading-relaxed" style="font-size:26px; max-width:1300px;">
+      O Escala Você parte de uma tese simples: quando o empreendedor cresce, o negócio cresce junto.
+      Por isso o foco do programa não é apenas a empresa — é desenvolver <strong class="text-slate-900">a pessoa
+      que está construindo a empresa</strong>, trazendo clareza, foco e capacidades de liderança para
+      conduzir a próxima fase do negócio.
+    </p>
+
+    <p class="text-slate-600 mt-6 leading-relaxed" style="font-size:26px; max-width:1300px;">
+      Um processo estruturado e individual, fundamentado em metodologias reconhecidas internacionalmente,
+      para avaliar opções, tomar decisões melhores e traçar um plano estratégico e viável para o seu momento.
+    </p>
+
+    <div class="grid grid-cols-4 gap-6 mt-14" style="max-width:1300px;">
+      <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 text-center">
+        <i class="fas fa-medal text-orange-500" style="font-size:26px;"></i>
+        <p class="font-bold text-slate-800 mt-3" style="font-size:20px;">Gallup CliftonStrengths</p>
+      </div>
+      <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 text-center">
+        <i class="fas fa-heart text-purple-500" style="font-size:26px;"></i>
+        <p class="font-bold text-slate-800 mt-3" style="font-size:20px;">Barrett Values</p>
+      </div>
+      <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 text-center">
+        <i class="fas fa-bullseye text-blue-600" style="font-size:26px;"></i>
+        <p class="font-bold text-slate-800 mt-3" style="font-size:20px;">OKRs</p>
+      </div>
+      <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 text-center">
+        <i class="fas fa-brain text-green-600" style="font-size:26px;"></i>
+        <p class="font-bold text-slate-800 mt-3" style="font-size:20px;">Positive Intelligence</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer text-slate-400"><div class="logo-mark" style="width:26px;height:26px;border-radius:8px;"><i class="fas fa-chart-line" style="font-size:11px;"></i></div> Escala Você · 02</div>
+</section></div>
+
+<!-- ============================================================
+     SLIDE 3 — VOCÊ JÁ SE PEGOU PENSANDO
+============================================================= -->
+<div class="slide-outer"><section class="slide bg-slate-50">
+  <div class="relative h-full flex flex-col justify-center px-[120px] py-[80px]">
+    <div class="text-center mb-12">
+      <span class="eyebrow text-blue-600">O Escala Você é para você</span>
+      <h2 class="font-extrabold text-slate-900 mt-3 mb-4" style="font-size:56px;">Você já se pegou pensando:</h2>
+      <div class="divider bg-blue-600 mx-auto" style="width:96px;"></div>
+    </div>
+
+    <div class="grid grid-cols-3 gap-6" style="max-width:1680px; margin:0 auto;">
+      <div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-100 flex items-start gap-4">
+        <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center shrink-0"><i class="fas fa-question text-red-400" style="font-size:20px;"></i></div>
+        <p class="text-slate-700 font-medium" style="font-size:21px;">"Não sei se estou no caminho certo."</p>
+      </div>
+      <div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-100 flex items-start gap-4">
+        <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center shrink-0"><i class="fas fa-brain text-orange-400" style="font-size:20px;"></i></div>
+        <p class="text-slate-700 font-medium" style="font-size:21px;">"Tenho muitas ideias e não consigo decidir qual seguir."</p>
+      </div>
+      <div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-100 flex items-start gap-4">
+        <div class="w-12 h-12 bg-yellow-50 rounded-xl flex items-center justify-center shrink-0"><i class="fas fa-clock text-yellow-500" style="font-size:20px;"></i></div>
+        <p class="text-slate-700 font-medium" style="font-size:21px;">"Trabalho o dia inteiro e parece que não produzi nada."</p>
+      </div>
+      <div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-100 flex items-start gap-4">
+        <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center shrink-0"><i class="fas fa-fire text-red-400" style="font-size:20px;"></i></div>
+        <p class="text-slate-700 font-medium" style="font-size:21px;">"Quero crescer mas fico todo tempo apagando incêndios."</p>
+      </div>
+      <div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-100 flex items-start gap-4">
+        <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center shrink-0"><i class="fas fa-link text-red-400" style="font-size:20px;"></i></div>
+        <p class="text-slate-700 font-medium" style="font-size:21px;">"Meu negócio depende demais de mim."</p>
+      </div>
+      <div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-100 flex items-start gap-4">
+        <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center shrink-0"><i class="fas fa-hands text-orange-400" style="font-size:20px;"></i></div>
+        <p class="text-slate-700 font-medium" style="font-size:21px;">"Tenho dificuldade para delegar."</p>
+      </div>
+      <div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-100 flex items-start gap-4">
+        <div class="w-12 h-12 bg-yellow-50 rounded-xl flex items-center justify-center shrink-0"><i class="fas fa-signs-post text-yellow-500" style="font-size:20px;"></i></div>
+        <p class="text-slate-700 font-medium" style="font-size:21px;">"Não sei exatamente qual deve ser meu próximo passo."</p>
+      </div>
+      <div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-100 flex items-start gap-4">
+        <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center shrink-0"><i class="fas fa-battery-empty text-red-400" style="font-size:20px;"></i></div>
+        <p class="text-slate-700 font-medium" style="font-size:21px;">"O negócio está consumindo minha vida."</p>
+      </div>
+      <div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-100 flex items-start gap-4">
+        <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center shrink-0"><i class="fas fa-person-running text-orange-400" style="font-size:20px;"></i></div>
+        <p class="text-slate-700 font-medium" style="font-size:21px;">"Sei o que preciso fazer, mas não consigo manter a disciplina."</p>
+      </div>
+    </div>
+
+    <div class="bg-blue-700 rounded-3xl p-10 text-center shadow-xl mt-12" style="max-width:1680px; margin-left:auto; margin-right:auto;">
+      <i class="fas fa-lightbulb text-yellow-300" style="font-size:34px;"></i>
+      <p class="text-white font-medium mt-4 leading-relaxed" style="font-size:26px; max-width:1300px; margin:16px auto 0;">
+        Se você respondeu <strong class="text-yellow-300">"sim"</strong> para algumas dessas perguntas, provavelmente
+        o desafio não está apenas na empresa. Está na forma como você está
+        <strong class="text-yellow-300">liderando essa fase do negócio.</strong>
+      </p>
+    </div>
+  </div>
+  <div class="page-footer text-slate-400"><div class="logo-mark" style="width:26px;height:26px;border-radius:8px;"><i class="fas fa-chart-line" style="font-size:11px;"></i></div> Escala Você · 03</div>
+</section></div>
+
+<!-- ============================================================
+     SLIDE 4 — O QUE VOCÊ VAI CONQUISTAR
+============================================================= -->
+<div class="slide-outer"><section class="slide">
+  <div class="relative h-full flex flex-col justify-center px-[140px] py-[80px]">
+    <div class="text-center mb-14">
+      <span class="eyebrow text-blue-600">Resultados</span>
+      <h2 class="font-extrabold text-slate-900 mt-3 mb-4" style="font-size:56px;">O que você vai conquistar?</h2>
+      <div class="divider bg-blue-600 mx-auto" style="width:96px;"></div>
+    </div>
+
+    <div class="relative grid grid-cols-2 gap-8" style="max-width:1560px; margin:0 auto;">
+      <div class="bg-blue-50 border border-blue-100 rounded-3xl p-10 pt-14">
+        <h3 class="font-extrabold text-blue-700 mb-4" style="font-size:28px;">CLAREZA</h3>
+        <ul class="space-y-3 text-slate-700" style="font-size:21px;">
+          <li>• Visão clara da direção do negócio e do seu papel como líder</li>
+          <li>• Avaliação de opções e definição de prioridades reais</li>
+        </ul>
+      </div>
+      <div class="bg-indigo-50 border border-indigo-100 rounded-3xl p-10 pt-14">
+        <h3 class="font-extrabold text-indigo-700 mb-4" style="font-size:28px;">FOCO</h3>
+        <ul class="space-y-3 text-slate-700" style="font-size:21px;">
+          <li>• Alinhamento de objetivos de curto, médio e longo prazo</li>
+          <li>• Energia direcionada ao que realmente importa para crescer</li>
+        </ul>
+      </div>
+      <div class="bg-emerald-50 border border-emerald-100 rounded-3xl p-10 pb-14">
+        <h3 class="font-extrabold text-emerald-700 mb-4" style="font-size:28px;">CONFIANÇA E LIDERANÇA</h3>
+        <ul class="space-y-3 text-slate-700" style="font-size:21px;">
+          <li>• Liderança mais consciente para inspirar e engajar a equipe</li>
+          <li>• Capacidade real de delegar e confiar</li>
+        </ul>
+      </div>
+      <div class="bg-slate-100 border border-slate-200 rounded-3xl p-10 pb-14">
+        <h3 class="font-extrabold text-slate-700 mb-4" style="font-size:28px;">AÇÃO</h3>
+        <ul class="space-y-3 text-slate-700" style="font-size:21px;">
+          <li>• Plano estratégico de 90 dias pronto para execução</li>
+          <li>• Ferramentas práticas para gerir o negócio no dia a dia</li>
+        </ul>
+      </div>
+
+      <div class="absolute rounded-full bg-white shadow-xl border-4 border-blue-100 flex items-center justify-center"
+           style="width:180px;height:180px; top:50%; left:50%; transform:translate(-50%,-50%);">
+        <div class="logo-mark" style="width:80px;height:80px;border-radius:20px;"><i class="fas fa-chart-line" style="font-size:32px;"></i></div>
+      </div>
+    </div>
+
+    <p class="text-center text-slate-500 mt-12" style="font-size:22px; max-width:1400px; margin-left:auto; margin-right:auto;">
+      <strong class="text-slate-800">Resultados de longo prazo:</strong> mais clareza, negócio alinhado aos seus
+      objetivos de vida, liderança mais forte e crescimento sustentável.
+    </p>
+  </div>
+  <div class="page-footer text-slate-400"><div class="logo-mark" style="width:26px;height:26px;border-radius:8px;"><i class="fas fa-chart-line" style="font-size:11px;"></i></div> Escala Você · 04</div>
+</section></div>
+
+<!-- ============================================================
+     SLIDE 5 — A JORNADA ESCALA VOCÊ
+============================================================= -->
+<div class="slide-outer"><section class="slide bg-slate-50">
+  <div class="relative h-full flex flex-col justify-center px-[110px] py-[80px]">
+    <div class="text-center mb-14">
+      <span class="eyebrow text-blue-600">Programa</span>
+      <h2 class="font-extrabold text-slate-900 mt-3 mb-4" style="font-size:56px;">A Jornada Escala Você</h2>
+      <div class="divider bg-blue-600 mx-auto" style="width:96px;"></div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-10" style="max-width:1400px; margin:0 auto;">
+      <div class="bg-white rounded-3xl p-10 border-t-8 border-blue-700 shadow-sm">
+        <div class="w-16 h-16 bg-blue-700 rounded-2xl flex items-center justify-center text-white font-bold mb-6" style="font-size:28px;">1</div>
+        <span class="text-blue-600 font-bold uppercase" style="font-size:18px; letter-spacing:.08em;">Módulo 1</span>
+        <h3 class="font-bold text-slate-900 mt-2 mb-4" style="font-size:30px;">Quem sou como empreendedor?</h3>
+        <p class="text-slate-600 leading-relaxed" style="font-size:22px;">Que tipo de negócio eu quero construir para sustentar a vida que eu quero viver?</p>
+      </div>
+      <div class="bg-white rounded-3xl p-10 border-t-8 border-indigo-700 shadow-sm">
+        <div class="w-16 h-16 bg-indigo-700 rounded-2xl flex items-center justify-center text-white font-bold mb-6" style="font-size:28px;">2</div>
+        <span class="text-indigo-600 font-bold uppercase" style="font-size:18px; letter-spacing:.08em;">Módulo 2</span>
+        <h3 class="font-bold text-slate-900 mt-2 mb-4" style="font-size:30px;">Minha estratégia como empreendedor</h3>
+        <p class="text-slate-600 leading-relaxed" style="font-size:22px;">Como transformo essa visão em prioridades e metas concretas?</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer text-slate-400"><div class="logo-mark" style="width:26px;height:26px;border-radius:8px;"><i class="fas fa-chart-line" style="font-size:11px;"></i></div> Escala Você · 05</div>
+</section></div>
+
+<!-- ============================================================
+     SLIDE 6 — CONTEÚDO DOS MÓDULOS
+============================================================= -->
+<div class="slide-outer"><section class="slide">
+  <div class="relative h-full flex flex-col justify-center px-[110px] py-[70px]">
+    <div class="text-center mb-10">
+      <span class="eyebrow text-blue-600">Programa</span>
+      <h2 class="font-extrabold text-slate-900 mt-3 mb-4" style="font-size:52px;">Conteúdo dos módulos</h2>
+      <div class="divider bg-blue-600 mx-auto" style="width:96px;"></div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-10" style="max-width:1720px; margin:0 auto;">
+      <div>
+        <h3 class="font-extrabold text-blue-700 mb-5" style="font-size:26px;">Módulo 1: Eu como empreendedor</h3>
+        <div class="space-y-4">
+          <div class="bg-blue-50 rounded-2xl p-5 flex gap-4">
+            <div class="w-9 h-9 bg-blue-700 rounded-lg flex items-center justify-center text-white font-bold shrink-0" style="font-size:16px;">1</div>
+            <p class="text-slate-700 leading-snug" style="font-size:17px;"><strong class="text-slate-900">Diagnóstico inicial</strong> (Ikigai e visão futura) para transformar frustrações e incertezas em uma direção estratégica clara e intencional.</p>
+          </div>
+          <div class="bg-blue-50 rounded-2xl p-5 flex gap-4">
+            <div class="w-9 h-9 bg-blue-700 rounded-lg flex items-center justify-center text-white font-bold shrink-0" style="font-size:16px;">2</div>
+            <p class="text-slate-700 leading-snug" style="font-size:17px;">Foco no <strong class="text-slate-900">DNA empreendedor</strong>. Mapeia talentos naturais (Strengths) para criar um mapa de fortalezas e identificar a zona de gênio e sabotadores.</p>
+          </div>
+          <div class="bg-blue-50 rounded-2xl p-5 flex gap-4">
+            <div class="w-9 h-9 bg-blue-700 rounded-lg flex items-center justify-center text-white font-bold shrink-0" style="font-size:16px;">3</div>
+            <p class="text-slate-700 leading-snug" style="font-size:17px;">Integra a história de vida ao propósito, usando dores superadas como diferencial competitivo para estruturar a <strong class="text-slate-900">Proposta de Valor Profissional</strong>.</p>
+          </div>
+          <div class="bg-blue-50 rounded-2xl p-5 flex gap-4">
+            <div class="w-9 h-9 bg-blue-700 rounded-lg flex items-center justify-center text-white font-bold shrink-0" style="font-size:16px;">4</div>
+            <p class="text-slate-700 leading-snug" style="font-size:17px;"><strong class="text-slate-900">Alinhamento de vida e negócio</strong>. Garante que o modelo do negócio e os valores do fundador sustentem a vida desejada sem drenar sua energia.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-extrabold text-indigo-700 mb-5" style="font-size:26px;">Módulo 2: Minha estratégia como empreendedor (OKRs)</h3>
+        <div class="space-y-4">
+          <div class="bg-indigo-50 rounded-2xl p-5 flex gap-4">
+            <div class="w-9 h-9 bg-indigo-700 rounded-lg flex items-center justify-center text-white font-bold shrink-0" style="font-size:16px;">1</div>
+            <p class="text-slate-700 leading-snug" style="font-size:17px;">Introdução aos <strong class="text-slate-900">OKRs pessoais</strong>. Faz um mapeamento financeiro e de tempo disponível para estabelecer as primeiras hipóteses de metas do negócio.</p>
+          </div>
+          <div class="bg-indigo-50 rounded-2xl p-5 flex gap-4">
+            <div class="w-9 h-9 bg-indigo-700 rounded-lg flex items-center justify-center text-white font-bold shrink-0" style="font-size:16px;">2</div>
+            <p class="text-slate-700 leading-snug" style="font-size:17px;"><strong class="text-slate-900">Teste de viabilidade</strong>. Aplica um choque de realidade numérico para refinar e validar se as metas financeiras e de tempo estipuladas são viáveis.</p>
+          </div>
+          <div class="bg-indigo-50 rounded-2xl p-5 flex gap-4">
+            <div class="w-9 h-9 bg-indigo-700 rounded-lg flex items-center justify-center text-white font-bold shrink-0" style="font-size:16px;">3</div>
+            <p class="text-slate-700 leading-snug" style="font-size:17px;"><strong class="text-slate-900">Fechamento dos OKRs</strong>. Combate distrações, prioriza projetos de alto retorno (Zona Mágica) e consolida um plano prático focado na execução.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer text-slate-400"><div class="logo-mark" style="width:26px;height:26px;border-radius:8px;"><i class="fas fa-chart-line" style="font-size:11px;"></i></div> Escala Você · 06</div>
+</section></div>
+
+<!-- ============================================================
+     SLIDE 7 — COMO FUNCIONA (INVESTIMENTO INDIVIDUAL)
+============================================================= -->
+<div class="slide-outer"><section class="slide">
+  <div class="relative h-full flex flex-col justify-center px-[110px] py-[70px]">
+    <div class="text-center mb-10">
+      <span class="eyebrow text-blue-600">Formato individual</span>
+      <h2 class="font-extrabold text-slate-900 mt-3 mb-4" style="font-size:56px;">Como funciona</h2>
+      <div class="divider bg-blue-600 mx-auto" style="width:96px;"></div>
+    </div>
+
+    <div class="grid grid-cols-3 gap-6 mb-8" style="max-width:1720px; margin:0 auto; width:100%;">
+      <div class="bg-blue-700 rounded-2xl p-6 text-white flex items-center gap-4">
+        <i class="fas fa-calendar-alt" style="font-size:26px;"></i>
+        <div><div class="opacity-80" style="font-size:16px;">Duração total</div><div class="font-bold" style="font-size:24px;">8 semanas</div></div>
+      </div>
+      <div class="bg-blue-700 rounded-2xl p-6 text-white flex items-center gap-4">
+        <i class="fas fa-video" style="font-size:26px;"></i>
+        <div><div class="opacity-80" style="font-size:16px;">Total de encontros</div><div class="font-bold" style="font-size:24px;">7 encontros</div></div>
+      </div>
+      <div class="bg-blue-700 rounded-2xl p-6 text-white flex items-center gap-4">
+        <i class="fas fa-clock" style="font-size:26px;"></i>
+        <div><div class="opacity-80" style="font-size:16px;">Duração dos encontros</div><div class="font-bold" style="font-size:24px;">1,5h cada</div></div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-3 gap-6" style="max-width:1720px; margin:0 auto; width:100%;">
+      <div class="bg-white rounded-3xl p-8 border-2 border-slate-100 shadow-sm">
+        <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-5"><i class="fas fa-user text-blue-600" style="font-size:22px;"></i></div>
+        <span class="text-blue-600 font-bold uppercase" style="font-size:15px; letter-spacing:.08em;">Módulo 1</span>
+        <h3 class="font-bold text-slate-900 mt-1 mb-3" style="font-size:23px;">Quem sou como empreendedor?</h3>
+        <ul class="text-slate-600 space-y-1 mb-5" style="font-size:18px;">
+          <li><i class="fas fa-calendar-check text-slate-400 mr-2"></i>4 encontros · 3 assessments</li>
+          <li><i class="fas fa-hourglass-half text-slate-400 mr-2"></i>Duração: 4 semanas</li>
+        </ul>
+        <div class="bg-slate-50 rounded-xl p-4"><div class="text-slate-500" style="font-size:15px;">Investimento</div><div class="font-extrabold text-blue-700" style="font-size:30px;">R$ 3.800</div></div>
+      </div>
+
+      <div class="bg-white rounded-3xl p-8 border-2 border-slate-100 shadow-sm">
+        <div class="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center mb-5"><i class="fas fa-bullseye text-indigo-600" style="font-size:22px;"></i></div>
+        <span class="text-indigo-600 font-bold uppercase" style="font-size:15px; letter-spacing:.08em;">Módulo 2</span>
+        <h3 class="font-bold text-slate-900 mt-1 mb-3" style="font-size:23px;">Minha estratégia como empreendedor</h3>
+        <ul class="text-slate-600 space-y-1 mb-5" style="font-size:18px;">
+          <li><i class="fas fa-calendar-check text-slate-400 mr-2"></i>3 encontros</li>
+          <li><i class="fas fa-hourglass-half text-slate-400 mr-2"></i>Duração: 4 semanas</li>
+        </ul>
+        <div class="bg-slate-50 rounded-xl p-4"><div class="text-slate-500" style="font-size:15px;">Investimento</div><div class="font-extrabold text-indigo-700" style="font-size:30px;">R$ 2.800</div></div>
+      </div>
+
+      <div class="bg-blue-50 rounded-3xl p-8 border-2 border-blue-600 shadow-md relative">
+        <div class="absolute -top-4 right-8 bg-blue-700 text-white font-bold px-4 py-1.5 rounded-full" style="font-size:14px;">MELHOR ESCOLHA</div>
+        <div class="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center mb-5"><i class="fas fa-star text-white" style="font-size:22px;"></i></div>
+        <span class="text-blue-700 font-bold uppercase" style="font-size:15px; letter-spacing:.08em;">Módulo 1 + Módulo 2</span>
+        <h3 class="font-bold text-slate-900 mt-1 mb-3" style="font-size:23px;">Programa Completo</h3>
+        <p class="text-slate-600 mb-5" style="font-size:18px;">A jornada completa: 7 encontros e 8 semanas para alinhar quem você é, definir sua estratégia e liderar o crescimento do negócio.</p>
+        <div class="bg-white rounded-xl p-4">
+          <div class="text-slate-500" style="font-size:15px;">Investimento</div>
+          <div class="font-extrabold text-blue-700" style="font-size:34px;">R$ 6.000</div>
+          <div class="text-emerald-600 font-semibold" style="font-size:15px;"><i class="fas fa-sparkles mr-1"></i>Economia de R$ 600</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-center text-slate-500 mt-8" style="font-size:19px;">
+      Encontros individuais 1:1 · Exercícios práticos entre os encontros · Apoio de IA para continuidade · Acompanhamento contínuo
+    </p>
+  </div>
+  <div class="page-footer text-slate-400"><div class="logo-mark" style="width:26px;height:26px;border-radius:8px;"><i class="fas fa-chart-line" style="font-size:11px;"></i></div> Escala Você · 07</div>
+</section></div>
+
+<!-- ============================================================
+     SLIDE 8 — FORMATO EM GRUPO (INVESTIMENTO)
+============================================================= -->
+<div class="slide-outer"><section class="slide bg-slate-50">
+  <div class="relative h-full flex flex-col justify-center px-[110px] py-[70px]">
+    <div class="text-center mb-10">
+      <span class="eyebrow text-blue-600">Formato em grupo · até 3 pessoas</span>
+      <h2 class="font-extrabold text-slate-900 mt-3 mb-4" style="font-size:56px;">Uma opção mais acessível</h2>
+      <div class="divider bg-blue-600 mx-auto" style="width:96px;"></div>
+    </div>
+
+    <div class="grid grid-cols-3 gap-6" style="max-width:1720px; margin:0 auto; width:100%;">
+      <div class="bg-white rounded-3xl p-8 border-2 border-slate-100 shadow-sm">
+        <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-5"><i class="fas fa-user text-blue-600" style="font-size:22px;"></i></div>
+        <span class="text-blue-600 font-bold uppercase" style="font-size:15px; letter-spacing:.08em;">Módulo 1</span>
+        <h3 class="font-bold text-slate-900 mt-1 mb-3" style="font-size:23px;">Quem sou como empreendedor? <sup class="text-red-500">*</sup></h3>
+        <ul class="text-slate-600 space-y-1 mb-5" style="font-size:18px;">
+          <li><i class="fas fa-calendar-check text-slate-400 mr-2"></i>4 encontros</li>
+          <li><i class="fas fa-hourglass-half text-slate-400 mr-2"></i>Duração: 4 semanas</li>
+        </ul>
+        <div class="bg-slate-50 rounded-xl p-4"><div class="text-slate-500" style="font-size:15px;">Investimento por pessoa</div><div class="font-extrabold text-blue-700" style="font-size:30px;">R$ 1.350</div></div>
+      </div>
+
+      <div class="bg-white rounded-3xl p-8 border-2 border-slate-100 shadow-sm">
+        <div class="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center mb-5"><i class="fas fa-bullseye text-indigo-600" style="font-size:22px;"></i></div>
+        <span class="text-indigo-600 font-bold uppercase" style="font-size:15px; letter-spacing:.08em;">Módulo 2</span>
+        <h3 class="font-bold text-slate-900 mt-1 mb-3" style="font-size:23px;">Minha estratégia como empreendedor</h3>
+        <ul class="text-slate-600 space-y-1 mb-5" style="font-size:18px;">
+          <li><i class="fas fa-calendar-check text-slate-400 mr-2"></i>3 encontros</li>
+          <li><i class="fas fa-hourglass-half text-slate-400 mr-2"></i>Duração: 4 semanas</li>
+        </ul>
+        <div class="bg-slate-50 rounded-xl p-4"><div class="text-slate-500" style="font-size:15px;">Investimento por pessoa</div><div class="font-extrabold text-indigo-700" style="font-size:30px;">R$ 1.000</div></div>
+      </div>
+
+      <div class="bg-blue-50 rounded-3xl p-8 border-2 border-blue-600 shadow-md relative">
+        <div class="absolute -top-4 right-8 bg-blue-700 text-white font-bold px-4 py-1.5 rounded-full" style="font-size:14px;">MELHOR ESCOLHA</div>
+        <div class="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center mb-5"><i class="fas fa-star text-white" style="font-size:22px;"></i></div>
+        <span class="text-blue-700 font-bold uppercase" style="font-size:15px; letter-spacing:.08em;">Módulo 1 + Módulo 2</span>
+        <h3 class="font-bold text-slate-900 mt-1 mb-3" style="font-size:23px;">Programa Completo <sup class="text-red-500">*</sup></h3>
+        <p class="text-slate-600 mb-5" style="font-size:18px;">A jornada completa em grupo: 7 encontros e 8 semanas para alinhar quem você é, definir sua estratégia e liderar o crescimento do negócio.</p>
+        <div class="bg-white rounded-xl p-4">
+          <div class="text-slate-500" style="font-size:15px;">Investimento por pessoa</div>
+          <div class="font-extrabold text-blue-700" style="font-size:34px;">R$ 2.000</div>
+          <div class="text-emerald-600 font-semibold" style="font-size:15px;"><i class="fas fa-sparkles mr-1"></i>Economia de R$ 350</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-center text-slate-500 mt-8" style="font-size:18px; max-width:1400px; margin-left:auto; margin-right:auto;">
+      <sup class="text-red-500">*</sup> No formato em grupo, o Módulo 1 não prevê a realização do assessment individual Gallup StrengthsFinder.
+    </p>
+  </div>
+  <div class="page-footer text-slate-400"><div class="logo-mark" style="width:26px;height:26px;border-radius:8px;"><i class="fas fa-chart-line" style="font-size:11px;"></i></div> Escala Você · 08</div>
+</section></div>
+
+<!-- ============================================================
+     SLIDE 9 — POR QUE FUNCIONA
+============================================================= -->
+<div class="slide-outer"><section class="slide bg-slate-50">
+  <div class="relative h-full flex flex-col justify-center px-[110px] py-[80px]">
+    <div class="text-center mb-12">
+      <span class="eyebrow text-blue-600">Por que escolher</span>
+      <h2 class="font-extrabold text-slate-900 mt-3 mb-4" style="font-size:56px;">Por que funciona?</h2>
+      <div class="divider bg-blue-600 mx-auto" style="width:96px;"></div>
+    </div>
+
+    <div class="bg-gradient-to-br from-blue-700 to-indigo-800 rounded-3xl p-10 text-white mb-10 shadow-xl" style="max-width:1720px; margin-left:auto; margin-right:auto;">
+      <i class="fas fa-star text-yellow-300" style="font-size:30px;"></i>
+      <p class="mt-4 font-light leading-relaxed" style="font-size:26px; max-width:1300px;">
+        Não trabalhamos apenas o negócio. Trabalhamos <strong class="text-yellow-300 font-bold">a pessoa que lidera
+        o negócio</strong> — o seu bem-estar e a sua forma única de fazer a diferença.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-6" style="max-width:1720px; margin:0 auto;">
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
+        <h3 class="font-bold text-slate-900 mb-3" style="font-size:24px;"><span class="text-blue-600">1.</span> Abordagem individual e personalizada</h3>
+        <p class="text-slate-600 leading-relaxed" style="font-size:20px;">Encontros 1:1, sem turmas — atenção total ao seu contexto e ritmo, com exercícios práticos entre os encontros e apoio de IA para dar continuidade à reflexão.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
+        <h3 class="font-bold text-slate-900 mb-3" style="font-size:24px;"><span class="text-blue-600">2.</span> Metodologias reconhecidas</h3>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="bg-orange-50 text-orange-600 font-semibold px-4 py-2 rounded-full" style="font-size:16px;"><i class="fas fa-medal mr-1"></i>Gallup CliftonStrengths</span>
+          <span class="bg-purple-50 text-purple-600 font-semibold px-4 py-2 rounded-full" style="font-size:16px;"><i class="fas fa-heart mr-1"></i>Barrett Values</span>
+          <span class="bg-blue-50 text-blue-600 font-semibold px-4 py-2 rounded-full" style="font-size:16px;"><i class="fas fa-bullseye mr-1"></i>OKRs</span>
+          <span class="bg-green-50 text-green-600 font-semibold px-4 py-2 rounded-full" style="font-size:16px;"><i class="fas fa-brain mr-1"></i>Positive Intelligence</span>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
+        <h3 class="font-bold text-slate-900 mb-3" style="font-size:24px;"><span class="text-blue-600">3.</span> Facilitadores experientes</h3>
+        <p class="text-slate-600 leading-relaxed" style="font-size:20px;">Marina Chekmysheva (+450 mentorados) e José Almeida (16 anos escalando a BuscaOnibus a 4 milhões de usuários/mês) conduzem o programa lado a lado com você.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
+        <h3 class="font-bold text-slate-900 mb-3" style="font-size:24px;"><span class="text-blue-600">4.</span> Resultado prático</h3>
+        <p class="text-slate-600 leading-relaxed" style="font-size:20px;">O programa termina com um plano estratégico de 90 dias, pronto para ser executado — não fica só na reflexão.</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer text-slate-400"><div class="logo-mark" style="width:26px;height:26px;border-radius:8px;"><i class="fas fa-chart-line" style="font-size:11px;"></i></div> Escala Você · 09</div>
+</section></div>
+
+<!-- ============================================================
+     SLIDE 10 — ANTES E DEPOIS
+============================================================= -->
+<div class="slide-outer"><section class="slide">
+  <div class="relative h-full flex flex-col justify-center px-[130px] py-[80px]">
+    <div class="text-center mb-12">
+      <span class="eyebrow text-blue-600">Resultados</span>
+      <h2 class="font-extrabold text-slate-900 mt-3 mb-4" style="font-size:56px;">A transformação</h2>
+      <div class="divider bg-blue-600 mx-auto" style="width:96px;"></div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-8" style="max-width:1660px; margin:0 auto;">
+      <div class="bg-white rounded-3xl p-10 border-2 border-red-100 shadow-sm">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center"><i class="fas fa-times text-red-500" style="font-size:20px;"></i></div>
+          <h3 class="font-bold text-red-600" style="font-size:28px;">Antes</h3>
+        </div>
+        <ul class="space-y-4 text-slate-700" style="font-size:21px;">
+          <li class="flex items-start gap-3"><i class="fas fa-circle-xmark text-red-400 mt-1"></i><span>Excesso de trabalho e sobrecarga constante</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-circle-xmark text-red-400 mt-1"></i><span>Dúvidas que não deixam o negócio avançar</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-circle-xmark text-red-400 mt-1"></i><span>Falta de foco e dispersão de energia</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-circle-xmark text-red-400 mt-1"></i><span>Dificuldade para liderar e inspirar a equipe</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-circle-xmark text-red-400 mt-1"></i><span>Prioridades confusas e urgências constantes</span></li>
+        </ul>
+      </div>
+      <div class="bg-white rounded-3xl p-10 border-2 border-green-100 shadow-sm">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center"><i class="fas fa-check text-green-600" style="font-size:20px;"></i></div>
+          <h3 class="font-bold text-green-600" style="font-size:28px;">Depois</h3>
+        </div>
+        <ul class="space-y-4 text-slate-700" style="font-size:21px;">
+          <li class="flex items-start gap-3"><i class="fas fa-circle-check text-green-500 mt-1"></i><span>Clareza sobre a direção do negócio</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-circle-check text-green-500 mt-1"></i><span>Foco no que realmente importa para crescer</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-circle-check text-green-500 mt-1"></i><span>Liderança mais consciente e eficaz</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-circle-check text-green-500 mt-1"></i><span>Capacidade real de delegar e confiar</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-circle-check text-green-500 mt-1"></i><span>Empresa alinhada aos seus objetivos de vida</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer text-slate-400"><div class="logo-mark" style="width:26px;height:26px;border-radius:8px;"><i class="fas fa-chart-line" style="font-size:11px;"></i></div> Escala Você · 10</div>
+</section></div>
+
+<!-- ============================================================
+     SLIDE 11 — FACILITADORES
+============================================================= -->
+<div class="slide-outer"><section class="slide bg-slate-50">
+  <div class="relative h-full flex flex-col justify-center px-[110px] py-[70px]">
+    <div class="text-center mb-10">
+      <span class="eyebrow text-blue-600">Time</span>
+      <h2 class="font-extrabold text-slate-900 mt-3 mb-4" style="font-size:56px;">Quem guiará você nesta jornada</h2>
+      <div class="divider bg-blue-600 mx-auto" style="width:96px;"></div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-8" style="max-width:1720px; margin:0 auto;">
+      <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100">
+        <div class="flex items-center gap-5 mb-5">
+          <img src="images/perfil-marina.webp" alt="Marina Chekmysheva" class="w-24 h-24 rounded-full object-cover object-top ring-2 ring-blue-100">
+          <div>
+            <h3 class="font-bold text-slate-900" style="font-size:24px;">Marina Chekmysheva</h3>
+            <p class="text-blue-600 font-semibold" style="font-size:17px;">Consultora internacional de desenvolvimento humano</p>
+          </div>
+        </div>
+        <div class="text-slate-600 space-y-3 leading-relaxed" style="font-size:18px;">
+          <p>Mais de 15 anos de experiência em consultoria e gestão de pessoas, atuando no Brasil, Rússia, Índia, Chile, Argentina e México.</p>
+          <p>Já acompanhou mais de <strong class="text-slate-800">450 mentorados</strong> em processos de desenvolvimento e transição de carreira.</p>
+          <p>Criadora da <strong class="text-blue-700">metodologia Realizar-Se</strong>, combinando desenvolvimento humano, estratégia e IA como apoio à reflexão.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100">
+        <div class="flex items-center gap-5 mb-5">
+          <img src="images/perfil-jose.webp" alt="José Almeida" class="w-24 h-24 rounded-full object-cover object-top ring-2 ring-indigo-100">
+          <div>
+            <h3 class="font-bold text-slate-900" style="font-size:24px;">José Almeida</h3>
+            <p class="text-indigo-600 font-semibold" style="font-size:17px;">Engenheiro de software internacional</p>
+          </div>
+        </div>
+        <div class="text-slate-600 space-y-3 leading-relaxed" style="font-size:18px;">
+          <p>Mais de 20 anos em tecnologia e gestão de negócios digitais em Portugal, Reino Unido e Brasil.</p>
+          <p>Liderou por <strong class="text-slate-800">16 anos toda a jornada da BuscaOnibus</strong>, escalando a plataforma até <strong class="text-slate-800">4 milhões de usuários mensais</strong> e conduzindo o Exit para um grupo internacional.</p>
+          <p>Especialista na implementação prática da <strong class="text-indigo-700">metodologia OKR</strong> para transformar prioridades em execução real.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer text-slate-400"><div class="logo-mark" style="width:26px;height:26px;border-radius:8px;"><i class="fas fa-chart-line" style="font-size:11px;"></i></div> Escala Você · 11</div>
+</section></div>
+
+<!-- ============================================================
+     SLIDE 12 — CONTATO
+============================================================= -->
+<div class="slide-outer"><section class="slide">
+  <div class="hero-bg" style="position:absolute; top:0; left:0; right:0; height:140px;"></div>
+  <div class="hero-bg" style="position:absolute; bottom:0; left:0; right:0; height:140px;"></div>
+
+  <div class="relative h-full flex items-center px-[130px]">
+    <div class="grid grid-cols-2 gap-16 items-center w-full">
+      <div>
+        <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6"><i class="fas fa-handshake text-blue-700" style="font-size:26px;"></i></div>
+        <h2 class="font-extrabold text-slate-900 leading-tight mb-6" style="font-size:56px;">Pronto para dar o<br>próximo passo?</h2>
+        <p class="text-slate-600 leading-relaxed" style="font-size:24px; max-width:560px;">
+          Se fizer sentido para você, seguimos juntos nesse processo com clareza e consciência.
+        </p>
+      </div>
+      <div class="space-y-8">
+        <div class="flex items-center gap-6">
+          <div class="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center shrink-0"><i class="fab fa-whatsapp text-emerald-600" style="font-size:28px;"></i></div>
+          <div><div class="text-slate-500 font-semibold" style="font-size:18px;">Celular / WhatsApp</div><div class="font-bold text-slate-900" style="font-size:26px;">+55 (48) 99117-2456</div></div>
+        </div>
+        <div class="flex items-center gap-6">
+          <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center shrink-0"><i class="fas fa-globe text-blue-600" style="font-size:28px;"></i></div>
+          <div><div class="text-slate-500 font-semibold" style="font-size:18px;">Website</div><div class="font-bold text-slate-900" style="font-size:26px;">escala-voce.web.app</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer text-slate-400" style="bottom:56px;"><div class="logo-mark" style="width:26px;height:26px;border-radius:8px;"><i class="fas fa-chart-line" style="font-size:11px;"></i></div> Escala Você · 12</div>
+</section></div>
+
+<!-- ============================================================
+     SLIDE 13 — OBRIGADO
+============================================================= -->
+<div class="slide-outer"><section class="slide hero-bg">
+  <div class="blob" style="width:700px;height:700px;background:radial-gradient(circle,rgba(59,130,246,.3),transparent 70%);top:-220px;left:-180px;"></div>
+  <div class="blob" style="width:600px;height:600px;background:radial-gradient(circle,rgba(99,102,241,.25),transparent 70%);bottom:-220px;right:-180px;"></div>
+  <div class="relative h-full flex flex-col items-center justify-center gap-8">
+    <div class="logo-mark" style="width:100px;height:100px;border-radius:28px;"><i class="fas fa-chart-line" style="font-size:42px;"></i></div>
+    <h2 class="text-white font-extrabold" style="font-size:96px;">OBRIGADO</h2>
+    <p class="text-blue-200" style="font-size:26px;">Escala Você — Programa de Desenvolvimento para Empreendedores</p>
+  </div>
+</section></div>
+
+<script>
+  function fitSlides() {
+    var scale = Math.min(1, (window.innerWidth - 40) / 1920);
+    document.querySelectorAll('.slide').forEach(function (slide) {
+      slide.style.transform = 'scale(' + scale + ')';
+      slide.parentElement.style.height = (1080 * scale) + 'px';
+    });
+  }
+  window.addEventListener('resize', fitSlides);
+  window.addEventListener('load', fitSlides);
+  window.addEventListener('beforeprint', function () {
+    document.querySelectorAll('.slide').forEach(function (s) { s.style.transform = 'none'; });
+    document.querySelectorAll('.slide-outer').forEach(function (o) { o.style.height = '1080px'; });
+  });
+  window.addEventListener('afterprint', fitSlides);
+</script>
+</body>
+</html>
