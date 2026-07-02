@@ -1,0 +1,10 @@
+{
+  "name": "escala-voce",
+  "private": true,
+  "scripts": {
+    "pdf": "node scripts/generate-pdf.js"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^25.3.0"
+  }
+}
